@@ -50,5 +50,40 @@ function wordReverse(str){
     return b.join(" ");
 }
 
+//6
+function largest(int, ...args){
+    let large = function(element){
+        return element > int;
+    }
 
+    if (args.some(large)){
+        let max = -Infinity;
+        for (let i=0; i<args.length; i++){
+            if (args[i]>max){
+                max=args[i];
+            }
+        }
+        return max;
+    } else {
+        return int;
+    }
+}
+
+function smallest(int, ...args){
+    let small = function(element){
+        return element < int;
+    }
+
+    if (args.some(small)){
+        let min = Infinity;
+        for (let i=0; i<args.length; i++){
+            if (args[i]<min){
+                min=args[i];
+            }
+        }
+        return min;
+    } else {
+        return int;
+    }
+}
 
